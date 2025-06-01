@@ -11,11 +11,11 @@ function calculateRentalCost(days) {
   const DISCOUNT_FOR_MID_TERM = 20;
   const totalAmount = START_PRICE * days;
 
-  if (days === LONG_TERM) {
+  if (days >= LONG_TERM) {
     return totalAmount - DISCOUNT_FOR_LONG_TERM;
   }
 
-  if (days >= MID_TERM) {
+  if (days >= MID_TERM && days < LONG_TERM) {
     return totalAmount - DISCOUNT_FOR_MID_TERM;
   }
 
